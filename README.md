@@ -1,4 +1,2 @@
-# study
-github test
-
-깃허브 사용법 익히는 중
+웹디자인기능사 공부 중
+javascript !!!
