@@ -2,4 +2,4 @@
 
 javascript !!!
 
-animation({ :""},반응속도,콜백함수(생략가능))
+animation({ :""},반응속도,콜백함수(생략가능));
