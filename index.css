@@ -12,23 +12,31 @@
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
+    max-width: 1920px;
+    max-height: 1080px;
 }
 a {
     text-decoration: none;
     color: #222;
     display: block;
 }
+li {
+    list-style: none;
+}
 body {
-    max-width: 1920px;
-    max-height: 1080px;
     font-family: 'Nanum Gothic', sans-serif;
-    overflow: hidden;
     font-weight: var(--main-font);
     color: #222;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 
-
+header {
+    width: 100%;
+    position: relative;
+}
 .head {
     display: flex;
     flex-direction: row-reverse;
@@ -83,9 +91,21 @@ body {
     transform: rotate(-45deg) translate(14px, -10px);
     transition: transform 0.2s ease-in-out;
 }
+.menu-list {
+    width: 20%;
+    position: absolute;
+    /* top: 100px;
+    left: 0; */
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.6s ease-in-out;
+    height: 800px;
+    background-color: var(--sub-1-color);
+}
 .menu-list.active {
+    opacity: 1;
     transform: translateX(0%);
-    transition: transform 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
 }
 .menu-list li {
     background-color: var(--sub-1-color);
@@ -99,22 +119,12 @@ body {
     transition: all 0.4s ease-in-out;
 }
 .menu-list li a {
-    padding: 30px;
+    padding: 35px;
     width: 100%;
     height: 100%;
     display: block;
     text-align: right;
     font-weight: var(--title-2-font);
-}
-.menu-list {
-    width: 20%;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    transform: translateX(-100%);
-    transition: transform 0.6s ease-in-out;
-    height: 900px;
-    background-color: var(--sub-1-color);
 }
 
 
@@ -126,13 +136,11 @@ section {
     background-color: white;
     width: 80%;
     text-align: center;
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 .prototype div {
-    /* border: 1px solid blue; */
     height: 100%;
     flex: 1;
 }
@@ -140,7 +148,6 @@ section {
     padding: 60px 40px;
 }
 .prototype h2 {
-    /* border: 1px solid pink; */
     margin-top: 200px;
     text-align: left;
     margin-bottom: 40px;
@@ -149,12 +156,11 @@ section {
 }
 .prototype p {
     text-align: left;
-    /* border: 1px solid khaki; */
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 200px;
 }
-.prototype button {
+.prototype button.btn {
     background-color: var(--main-color);
     color: #fff;
     border: none;
@@ -165,10 +171,38 @@ section {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease-in-out;
+    animation: btn 2s cubic-bezier(.2,.58,.9,.64) both infinite;
 }
+
+@keyframes btn {
+    0%,
+    100% {
+              transform: rotate(0deg);
+              transform-origin: 50% 100%;
+    }
+    10% {
+              transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+              transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+              transform: rotate(4deg);
+    }
+    80% {
+              transform: rotate(-2deg);
+    }
+    90% {
+              transform: rotate(2deg);
+    }
+  }
+  
 .prototype button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 .prototype video {
     width: 300px;
@@ -180,17 +214,21 @@ section {
 
 
 footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     height: 70px;
     font-size: 12px;
     color: #c3c3c3;
     text-align: center;
     padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f9f9f9;
 }
 footer p {
-    margin-bottom: 5px;
+    margin: 5px 0;
 }
 
 
