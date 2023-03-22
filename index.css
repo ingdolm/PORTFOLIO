@@ -1,11 +1,198 @@
+:root {
+    --main-color: #fbba33;
+    --sub-1-color: #f5eedd;
+    --sub-2-color: #CFB890;
+    --sub-3-color: #7E5823;
+    --point-color: #06670D;
+    --title-1-font: 800;
+    --title-2-font: 700;
+    --main-font: 400;
+}
 * {
-    background-color: beige;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
 }
-div {
-    border: 1px solid red;
-    overflow-x: auto;
-    overflow-y: auto;
+a {
+    text-decoration: none;
+    color: #222;
+    display: block;
 }
-div > img {
+body {
+    max-width: 1920px;
+    max-height: 1080px;
+    font-family: 'Nanum Gothic', sans-serif;
+    overflow: hidden;
+    font-weight: var(--main-font);
+    color: #222;
+}
+
+
+
+.head {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100px;
+    border-bottom: 1px solid var(--sub-1-color);
+}
+.head .logo {
+    flex: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head .logo a {
+    background-image: url(./img/Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px;
+    height: 40px;
+    text-align: center;
+}
+.head .menu {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.head .menu .menu-btn {
+    width: 80px;
+    height: 80px;
+    padding: 15px 18px;
+}
+.menu-btn .bar1, .bar2, .bar3 {
+    background-color: var(--main-color);
+    width: 40px;
+    height: 6px;
+    border-radius: 3px;
+    margin: 8px 0;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+}
+.menu-btn .bar1.active {
+    transform: rotate(45deg) translate(10px, 6px);
+    transition: transform 0.2s ease-in-out;
+}
+.menu-btn .bar2.active {
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+.menu-btn .bar3.active {
+    transform: rotate(-45deg) translate(14px, -10px);
+    transition: transform 0.2s ease-in-out;
+}
+.menu-list.active {
+    transform: translateX(0%);
+    transition: transform 0.6s ease-in-out;
+}
+.menu-list li {
+    background-color: var(--sub-1-color);
+    font-size: 20px;
+    width: 100%;
+    height: 100px;
+}
+.menu-list li a:hover {
+    background-color: var(--point-color);
+    color: #fff;
+    transition: all 0.4s ease-in-out;
+}
+.menu-list li a {
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: right;
+    font-weight: var(--title-2-font);
+}
+.menu-list {
+    width: 20%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease-in-out;
+    height: 900px;
+    background-color: var(--sub-1-color);
+}
+
+
+
+section {
     width: 100%;
 }
+.prototype {
+    background-color: white;
+    width: 80%;
+    text-align: center;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.prototype div {
+    /* border: 1px solid blue; */
+    height: 100%;
+    flex: 1;
+}
+.prototype div:nth-child(1){
+    padding: 60px 40px;
+}
+.prototype h2 {
+    /* border: 1px solid pink; */
+    margin-top: 200px;
+    text-align: left;
+    margin-bottom: 40px;
+    font-weight: var(--title-2-font);
+    font-size: 28px;
+}
+.prototype p {
+    text-align: left;
+    /* border: 1px solid khaki; */
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 200px;
+}
+.prototype button {
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: var(--title-2-font);
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+.prototype button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+.prototype video {
+    width: 300px;
+    margin: 40px;
+    border-radius: 30px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.8);
+}
+
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    font-size: 12px;
+    color: #c3c3c3;
+    text-align: center;
+    padding: 20px 0;
+}
+footer p {
+    margin-bottom: 5px;
+}
+
+
+
+
